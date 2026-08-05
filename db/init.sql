@@ -12,3 +12,10 @@ CREATE TABLE IF NOT EXISTS users(
     sobrenome VARCHAR(100),
     email VARCHAR(100)
 );
+
+CREATE TABLE ticket(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    status enum('a fazer','em andamento','concluido'),
+    titulo VARCHAR(100),
+    texto VARCHAR(500)
+);
