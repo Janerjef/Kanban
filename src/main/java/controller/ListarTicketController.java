@@ -1,6 +1,7 @@
 package controller;
 
 import com.google.gson.Gson;
+import dao.TicketDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,8 +17,8 @@ import java.util.List;
 public class ListarTicketController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        TicketModel ticket = new TicketModel();
-        List<TicketModel> lista = new ArrayList<>();
+        TicketDao dao = new TicketDao();
+        List<TicketModel> lista = dao.listar();
 
         String json = new Gson().toJson(lista);
 

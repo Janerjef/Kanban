@@ -84,9 +84,10 @@ public class TicketDao {
             while (rs.next()) {
                 TicketModel ticket = new TicketModel();
 
-                ticket.setTitulo(rs.getString(""));
-                ticket.setTexto(rs.getString(""));
-                ticket.setStatus(rs.getString(""));
+                ticket.setId(rs.getInt("id"));
+                ticket.setTitulo(rs.getString("titulo"));
+                ticket.setTexto(rs.getString("texto"));
+                ticket.setStatus(rs.getString("status"));
                 lista.add(ticket);
             }
         } catch (Exception e) {
