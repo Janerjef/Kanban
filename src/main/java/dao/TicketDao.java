@@ -32,7 +32,7 @@ public class TicketDao {
     }
 
     public boolean atualizar(TicketModel ticket) {
-        String sql = "UPDATE ticket SET" +
+        String sql = "UPDATE ticket SET " +
                 "status = ?; " +
                 "titulo = ?, " +
                 "texto = ? " +
@@ -43,6 +43,7 @@ public class TicketDao {
             stmt.setString(1, ticket.getStatus());
             stmt.setString(2, ticket.getTitulo());
             stmt.setString(3, ticket.getTexto());
+            stmt.setInt(4, ticket.getId());
 
             stmt.executeUpdate();
             return true;
