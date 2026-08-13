@@ -29,14 +29,12 @@ public class LoginServlet extends HttpServlet {
         UserDAO dao = new UserDAO();
         UserModel user = dao.validarLogin(userModel);
 
-        if( user != null){
+        if(user != null){
             HttpSession session = request.getSession();
-
             session.setAttribute("usuario", user.getUsername());
-
             response.sendRedirect(request.getContextPath() + "/quadro.html");
         } else{
-            response.sendRedirect(request.getContextPath() + "/index.html");
+            response.sendRedirect(request.getContextPath() + "/pages/quadro.html");
         }
     }
 
