@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebServlet("/ticket/excluir")
 public class ExcluirTicketController extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         TicketModel ticket = new TicketModel();
 
@@ -22,9 +22,9 @@ public class ExcluirTicketController extends HttpServlet {
 
         TicketDao dao = new TicketDao();
         if(dao.deletar(ticket.getId())){
-            response.sendRedirect(request.getContextPath() + "");
+            response.sendRedirect(request.getContextPath() + "/pages/quadro.html");
         }else {
-            response.sendRedirect(request.getContextPath() + "");
+            response.sendRedirect(request.getContextPath() + "/pages/quadro.html");
         }
     }
 }
