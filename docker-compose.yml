@@ -22,7 +22,7 @@ services:
 
   app:
     build: .
-    container_name: app-estoque
+    container_name: app-kanban
     restart: always
     ports:
       - "8080:8080"

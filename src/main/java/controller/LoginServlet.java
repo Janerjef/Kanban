@@ -32,9 +32,9 @@ public class LoginServlet extends HttpServlet {
         if(user != null){
             HttpSession session = request.getSession();
             session.setAttribute("usuario", user.getUsername());
-            response.sendRedirect(request.getContextPath() + "/quadro.html");
-        } else{
             response.sendRedirect(request.getContextPath() + "/pages/quadro.html");
+        } else{
+            response.sendRedirect(request.getContextPath() + "/pages/index.html");
         }
     }
 

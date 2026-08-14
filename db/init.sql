@@ -1,5 +1,3 @@
-CREATE DATABASE kanban;
-
 USE kanban;
 
 CREATE TABLE IF NOT EXISTS users(
@@ -13,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users(
     email VARCHAR(100)
 );
 
-CREATE TABLE ticket(
+CREATE TABLE  IF NOT EXISTS  ticket(
     id INT AUTO_INCREMENT PRIMARY KEY,
     status enum('a fazer','em andamento','concluido'),
     titulo VARCHAR(100),
