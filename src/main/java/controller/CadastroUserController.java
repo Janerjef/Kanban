@@ -26,7 +26,7 @@ public class CadastroUserController extends HttpServlet {
         CadastroUserDao dao = new CadastroUserDao();
 
         if(dao.cadastrar(user)){
-            response.sendRedirect(request.getContextPath() + "/pages/index.html");
+            response.sendRedirect(request.getContextPath() + "/index.html");
         }else{
             response.sendRedirect(request.getContextPath() + "/pages/cadastroUsuario.html");
         }
