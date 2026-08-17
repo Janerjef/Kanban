@@ -9,7 +9,7 @@ public class CadastroTicketDao {
 
     public boolean cadastrarTicket(TicketModel ticket){
         String sql = "INSERT INTO ticket" +
-                "(status, titulo, texto)" +
+                "(status, titulo, texto, area_id)" +
                 "VALUES(?, ?, ?, ?)";
 
         try(var con = ConnectionFactory.getConnection()){
@@ -18,6 +18,7 @@ public class CadastroTicketDao {
             stmt.setString(1, ticket.getStatus() );
             stmt.setString(2, ticket.getTitulo() );
             stmt.setString(3, ticket.getTexto() );
+            stmt.setInt(4, ticket.getAreaId());
             stmt.executeUpdate();
 
             return true;

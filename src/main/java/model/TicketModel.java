@@ -5,6 +5,7 @@ public class TicketModel {
     private String status;
     private String titulo;
     private String Texto;
+    private int areaId;
 
     public int getId() {
         return id;
@@ -37,4 +38,9 @@ public class TicketModel {
     public void setTexto(String texto) {
         Texto = texto;
     }
+
+    public int getAreaId() { return areaId; }
+
+    public void setAreaId(int areaId) { this.areaId = areaId; }
 }
+
