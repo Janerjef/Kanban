@@ -11,9 +11,18 @@ CREATE TABLE IF NOT EXISTS users(
     email VARCHAR(100)
 );
 
+CREATE TABLE areas(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao VARCHAR(255)
+);
+
 CREATE TABLE  IF NOT EXISTS  ticket(
     id INT AUTO_INCREMENT PRIMARY KEY,
     status enum('a fazer','em andamento','concluido'),
     titulo VARCHAR(100),
-    texto VARCHAR(500)
+    texto VARCHAR(500),
+    area_id INT,
+    ADD CONSTRAINT fk_ticket_area
+    FOREIGN KEY (area_id) REFERENCES area(id)
 );
