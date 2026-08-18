@@ -2,12 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/quadro.css">
+    <title>Quadro | kanban</title>
+   
 </head>
-<body>
-<h1>Quadro Kanban</h1>
-<form action="/ticket/cadastro" method="post">
 
-    
+<body>
+
+    <header>
+        <h1>Quadro Kanban</h1>
+        <form action="/ticket/cadastro" method="post">
+    </header>
+<main class="kanban-board">
+    <div class="kanban-column backlog">
+        <h2>Backlog</h2>
+    </div>
+
+    <div class="kanban-column a-fazer">
+        <h2>A fazer</h2>
+    </div>
+
+    <div class="kanban-column em-andamento">
+        <h2>Em andamento</h2>
+    </div>
+
+    <div class="kanban-column concluido">
+        <h2>Concluído</h2>
+    </div>
+</main>
+    <footer>
+        <p>Em desenvolvimento</p>
+    </footer>
+
+
 </body>
+
 </html>

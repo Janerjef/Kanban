@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: #fff8ff;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(rgba(16, 8, 18, 0.60), rgba(16, 8, 18, 0.82)),
+        url("../assets/imagens/background-kanban.webp") center / cover fixed;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+    padding: 20px 5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(26, 15, 31, 0.70);
+    backdrop-filter: blur(12px);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.7rem;
+}
+
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(230px, 1fr));
+    gap: 20px;
+    min-height: calc(100vh - 140px);
+    padding: 28px 5%;
+    overflow-x: auto;
+}
+
+
+.kanban-column {
+    min-height: 500px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    background: rgba(28, 18, 34, 0.78);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(10px);
+}
+
+.kanban-column h2 {
+    margin: 0 0 18px;
+    padding: 0 0 12px;
+    border-bottom: 3px solid;
+    font-size: 1.05rem;
+}
+
+
+.backlog h2 {
+    border-color: #a791ff;
+    color: #d8d0ff;
+}
+
+.a-fazer h2 {
+    border-color: #f1b556;
+    color: #ffd890;
+}
+
+.em-andamento h2 {
+    border-color: #67a8ff;
+    color: #abd0ff;
+}
+
+.concluido h2 {
+    border-color: #6dd69d;
+    color: #a5f2c7;
+}
+
+
+.ticket-card {
+    margin-bottom: 12px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+.ticket-card h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+}
+
+.ticket-card p {
+    margin: 0;
+    color: #d8cad9;
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+footer {
+    padding: 16px;
+    color: #cfc0cf;
+    text-align: center;
+}
+
