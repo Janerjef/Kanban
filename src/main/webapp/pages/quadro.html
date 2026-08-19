@@ -13,22 +13,31 @@
     <header>
         <h1>Quadro Kanban</h1>
         <form action="/ticket/cadastro" method="post">
+            <button class="adicionar">+ Adcionar Ticket</button>
     </header>
 <main class="kanban-board">
-    <div class="kanban-column backlog">
+    <div class="kanban-column backlog" data-area-id="1">
         <h2>Backlog</h2>
+        <button type="button" class="adicionar">+</button>
+        <div class="cards"></div>
     </div>
 
-    <div class="kanban-column a-fazer">
+    <div class="kanban-column a-fazer" data-area-id="2">
         <h2>A fazer</h2>
+        <button type="button" class="adicionar">+</button>
+        <div class="cards"></div>
     </div>
 
-    <div class="kanban-column em-andamento">
+    <div class="kanban-column em-andamento" data-area-id="3">
         <h2>Em andamento</h2>
+        <button type="button" class="adicionar">+</button>
+        <div class="cards"></div>
     </div>
 
-    <div class="kanban-column concluido">
+    <div class="kanban-column concluido" data-area-id="4">
         <h2>Concluído</h2>
+        <button type="button" class="adicionar">+</button>
+        <div class="cards"></div>
     </div>
 </main>
     <footer>

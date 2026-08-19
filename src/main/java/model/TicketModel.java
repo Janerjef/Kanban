@@ -2,7 +2,6 @@ package model;
 
 public class TicketModel {
     private int id;
-    private String status;
     private String titulo;
     private String Texto;
     private int areaId;
@@ -13,14 +12,6 @@ public class TicketModel {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getTitulo() {

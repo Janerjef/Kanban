@@ -19,10 +19,15 @@ CREATE TABLE areas(
 
 CREATE TABLE  IF NOT EXISTS  ticket(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    status enum('a fazer','em andamento','concluido'),
     titulo VARCHAR(100),
     texto VARCHAR(500),
     area_id INT,
-    ADD CONSTRAINT fk_ticket_area
-    FOREIGN KEY (area_id) REFERENCES area(id)
+    CONSTRAINT fk_ticket_area
+    FOREIGN KEY (area_id) REFERENCES areas(id)
 );
+
+INSERT INTO areas (id,nome) VALUES
+(1, 'Backlog'),
+(2, 'A fazer'),
+(3, 'Em andamento'),
+(4, 'Concluido');

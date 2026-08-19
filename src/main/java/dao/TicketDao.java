@@ -12,14 +12,15 @@ public class TicketDao {
 
     public boolean cadastrarTicket(TicketModel ticket) {
         String sql = "INSERT INTO ticket" +
-                "(status,titulo,texto)" +
+                "(titulo,texto,area_id)" +
                 "VALUES(?,?,?)";
         try (var con = ConnectionFactory.getConnection()) {
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            stmt.setString(1, ticket.getStatus());
-            stmt.setString(2, ticket.getTitulo());
-            stmt.setString(3, ticket.getTexto());
+
+            stmt.setString(1, ticket.getTitulo());
+            stmt.setString(2, ticket.getTexto());
+            stmt.setInt(3, ticket.getAreaId());
 
             stmt.executeUpdate();
             return true;
@@ -33,16 +34,16 @@ public class TicketDao {
 
     public boolean atualizar(TicketModel ticket) {
         String sql = "UPDATE ticket SET " +
-                "status = ?; " +
                 "titulo = ?, " +
-                "texto = ? " +
+                "texto = ?, " +
+                "area_id = ?" +
                 "WHERE id = ?";
         try (var con = ConnectionFactory.getConnection()) {
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            stmt.setString(1, ticket.getStatus());
-            stmt.setString(2, ticket.getTitulo());
-            stmt.setString(3, ticket.getTexto());
+            stmt.setString(1, ticket.getTitulo());
+            stmt.setString(2, ticket.getTexto());
+            stmt.setInt(3, ticket.getAreaId());
             stmt.setInt(4, ticket.getId());
 
             stmt.executeUpdate();
@@ -88,7 +89,7 @@ public class TicketDao {
                 ticket.setId(rs.getInt("id"));
                 ticket.setTitulo(rs.getString("titulo"));
                 ticket.setTexto(rs.getString("texto"));
-                ticket.setStatus(rs.getString("status"));
+                ticket.setAreaId(rs.getInt("area_id"));
                 lista.add(ticket);
             }
         } catch (Exception e) {
