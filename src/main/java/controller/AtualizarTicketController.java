@@ -18,10 +18,11 @@ public class AtualizarTicketController extends HttpServlet {
 
         TicketModel ticket = new TicketModel();
 
-        ticket.setId(Integer.parseInt("id"));
+        ticket.setId(Integer.parseInt(request.getParameter("id")));
         ticket.setTitulo(request.getParameter("titulo"));
         ticket.setTexto(request.getParameter("texto"));
-        ticket.setAreaId(Integer.parseInt("area_id"));
+        ticket.setAreaId(Integer.parseInt(request.getParameter("area_id")));
+        ;
 
         TicketDao dao = new TicketDao();
         if(dao.atualizar(ticket)){

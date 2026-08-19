@@ -36,7 +36,7 @@ public class TicketDao {
         String sql = "UPDATE ticket SET " +
                 "titulo = ?, " +
                 "texto = ?, " +
-                "area_id = ?" +
+                "area_id = ? " +
                 "WHERE id = ?";
         try (var con = ConnectionFactory.getConnection()) {
             PreparedStatement stmt = con.prepareStatement(sql);

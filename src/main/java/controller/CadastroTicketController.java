@@ -20,7 +20,7 @@ public class CadastroTicketController extends HttpServlet {
 
         ticket.setTitulo(request.getParameter("titulo"));
         ticket.setTexto(request.getParameter("texto"));
-        ticket.setAreaId(Integer.parseInt("area_id"));
+        ticket.setAreaId(Integer.parseInt(request.getParameter("area_id")));
 
         TicketDao dao =new TicketDao(); 
         if(dao.cadastrarTicket(ticket)){

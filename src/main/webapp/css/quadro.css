@@ -105,3 +105,77 @@ footer {
     text-align: center;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-conteudo {
+    position: relative;
+    width: min(100%, 440px);
+    padding: 24px;
+    border-radius: 10px;
+    color: #2e2430;
+    background: #fff;
+}
+
+.modal-conteudo h2 {
+    margin-top: 0;
+}
+
+.modal-conteudo form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-conteudo input,
+.modal-conteudo textarea,
+.modal-conteudo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b9acba;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.modal-conteudo textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    border: 0;
+    color: #4a244f;
+    font-size: 26px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.salvar-ticket,
+.adicionar {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background: #4a244f;
+}
+
+.salvar-ticket:hover,
+.adicionar:hover {
+    background: #623368;
+}

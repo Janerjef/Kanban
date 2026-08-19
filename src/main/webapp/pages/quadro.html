@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/quadro.css">
     <title>Quadro | kanban</title>
-   
+
 </head>
 
 <body>
@@ -13,38 +14,61 @@
     <header>
         <h1>Quadro Kanban</h1>
         <form action="/ticket/cadastro" method="post">
-            <button class="adicionar">+ Adcionar Ticket</button>
+            <button type="button" class="adicionar" id="abrir-modal">+ Adcionar Ticket</button>
     </header>
-<main class="kanban-board">
-    <div class="kanban-column backlog" data-area-id="1">
-        <h2>Backlog</h2>
-        <button type="button" class="adicionar">+</button>
-        <div class="cards"></div>
+    <main class="kanban-board">
+        <div class="kanban-column backlog" data-area-id="1">
+            <h2>Backlog</h2>
+            <div class="cards"></div>
+        </div>
+
+        <div class="kanban-column a-fazer" data-area-id="2">
+            <h2>A fazer</h2>
+            <div class="cards"></div>
+        </div>
+
+        <div class="kanban-column em-andamento" data-area-id="3">
+            <h2>Em andamento</h2>
+            <div class="cards"></div>
+        </div>
+
+        <div class="kanban-column concluido" data-area-id="4">
+            <h2>Concluído</h2>
+            <div class="cards"></div>
+        </div>
+    </main>
+    <div class="modal" id="modal-ticket">
+        <div class="modal-conteudo">
+            <button type="button" class="fechar-modal" id="fechar-modal">
+                x
+            </button>
+            <h2>Novo ticket</h2>
+
+            <form action="../ticket/cadastro" method="post">
+                <label for="titulo">Titulo</label>
+                <input type="text" id="titulo" name="titulo" maxlength="100" required>
+                
+                <label for="texto">Descrição</label>
+                <textarea name="texto" id="titulo"></textarea>
+
+                <label for="area_id">Area</label>
+                <select name="area_id" id="area_id" required> 
+                    <option value="1">Backlog</option>
+                    <option value="2">A fazer</option>
+                    <option value="3">Em andamento</option>
+                    <option value="4">Concluido</option>
+                </select>
+
+                <button type="submit" class="salvar-ticket">Criar Ticket</button>
+                </form>
+        </div>
     </div>
 
-    <div class="kanban-column a-fazer" data-area-id="2">
-        <h2>A fazer</h2>
-        <button type="button" class="adicionar">+</button>
-        <div class="cards"></div>
-    </div>
-
-    <div class="kanban-column em-andamento" data-area-id="3">
-        <h2>Em andamento</h2>
-        <button type="button" class="adicionar">+</button>
-        <div class="cards"></div>
-    </div>
-
-    <div class="kanban-column concluido" data-area-id="4">
-        <h2>Concluído</h2>
-        <button type="button" class="adicionar">+</button>
-        <div class="cards"></div>
-    </div>
-</main>
     <footer>
         <p>Em desenvolvimento</p>
     </footer>
 
-
+    <script src="../js/quadro.js"></script>
 </body>
 
 </html>
