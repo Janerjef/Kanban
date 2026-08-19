@@ -18,14 +18,13 @@ public class CadastroTicketController extends HttpServlet {
 
         TicketModel ticket = new TicketModel();
 
-        ticket.setStatus(request.getParameter(""));
-        ticket.setTitulo(request.getParameter(""));
-        ticket.setTexto(request.getParameter(""));
-
+        ticket.setTitulo(request.getParameter("titulo"));
+        ticket.setTexto(request.getParameter("texto"));
+        ticket.setAreaId(Integer.parseInt("area_id"));
 
         TicketDao dao =new TicketDao(); 
         if(dao.cadastrarTicket(ticket)){
-            response.sendRedirect(request.getContextPath() + "");
+            response.sendRedirect(request.getContextPath() + "/pages/quadro.html");
         }else{
             response.sendRedirect(request.getContextPath() + "");
         }
