@@ -123,27 +123,31 @@ footer {
 .modal-conteudo {
     position: relative;
     width: min(100%, 440px);
-    padding: 24px;
+    padding: 32px;
     border-radius: 10px;
-    color: #2e2430;
+    color: #fff;
     background: #fff;
+    background:
+    linear-gradient(rgba(35, 18, 38, 0.82), rgba(35, 18, 38, 0.92)),
+    url("../assets/imagens/background-kanban.webp") center / cover;
 }
 
 .modal-conteudo h2 {
-    margin-top: 0;
+    margin-top: 0 0 26px;
+    color: white;
 }
 
 .modal-conteudo form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
 .modal-conteudo input,
 .modal-conteudo textarea,
 .modal-conteudo select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #b9acba;
     border-radius: 5px;
     font: inherit;
@@ -152,6 +156,7 @@ footer {
 .modal-conteudo textarea {
     min-height: 100px;
     resize: vertical;
+    
 }
 
 .fechar-modal {
@@ -173,6 +178,8 @@ footer {
     color: white;
     cursor: pointer;
     background: #4a244f;
+    margin-top: 18px;
+    
 }
 
 .salvar-ticket:hover,
